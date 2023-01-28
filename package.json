@@ -18,12 +18,10 @@
     "mongoose-sequence": "^5.3.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
-    "nodemon": "^2.0.15",
     "path": "^0.12.7",
     "path-posix": "^1.0.0",
     "paypal-rest-sdk": "^1.8.1",
     "pug": "^3.0.2",
-    
     "query-string": "^7.1.1",
     "simple-signal-server": "^3.0.0",
     "socket.io": "^4.5.1",
@@ -31,7 +29,8 @@
     "stripe": "^10.11.0"
   },
   "devDependencies": {
-    "puppeteer": "^19.3.0"
+    "puppeteer": "^19.3.0",
+    "nodemon": "^2.0.15"
   }
   ,
   "browserslist": [

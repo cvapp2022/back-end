@@ -1,0 +1,63 @@
+extends ../layout
+
+block content
+    .row
+        .col-sm-12 
+            h3 mentors list
+            each mentor in mentors 
+                .card.my-2
+                    .card-body 
+                        .d-flex.justify-content-between
+                            h4=mentor.item.MentorName
+                            if(mentor.inService)
+                                button.btn.btn-danger.removeFromProgBtn(data-prog=service._id,data-mentor=mentor.item._id) remove From service 
+                            else
+                                button.btn.btn-primary.addToProgBtn(data-serv=service._id,data-mentor=mentor.item._id) add to service 
+
+
+block script 
+    script.
+
+        $('.addToProgBtn').click(function(){
+            var mentorId=$(this).data('mentor');
+            var serviceId=$(this).data('serv');
+            var url='/Cpanel/services/addMentorToServ';
+            var data = {
+                mentorId,
+                serviceId
+            }
+            console.log(data)
+            $.ajax({
+                url:url,
+                method:'post',
+                data:data,
+                success:function(){
+                    console.log('done')
+                    location.reload()
+                }
+            })
+        });
+
+        $('.removeFromProgBtn').click(function(){
+            var mentorId=$(this).data('mentor');
+            var serviceId=$(this).data('prog');
+            var url='/Cpanel/services/removeMentorFromServ';
+            var data = {
+                mentorId,
+                serviceId
+            }
+            console.log(data)
+            $.ajax({
+                url:url,
+                method:'post',
+                data:data,
+                success:function(){
+                    console.log('done')
+                    location.reload()
+                }
+            })
+
+        })
+
+
+

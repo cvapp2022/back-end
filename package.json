@@ -1,0 +1,43 @@
+{
+  "name": "cv-app-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "express-validator": "^6.12.1",
+    "googleapis": "^100.0.0",
+    "html-pdf": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.7",
+    "mongoose-sequence": "^5.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "path-posix": "^1.0.0",
+    "paypal-rest-sdk": "^1.8.1",
+    "pug": "^3.0.2",
+    "puppeteer": "^19.3.0",
+    "query-string": "^7.1.1",
+    "simple-signal-server": "^3.0.0",
+    "socket.io": "^4.5.1",
+    "stream": "^0.0.2",
+    "stripe": "^10.11.0"
+  },
+  "browserslist": [
+    "Safari >=4"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon  app.js -e js,pug"
+  },
+  "author": "",
+  "license": "ISC"
+}

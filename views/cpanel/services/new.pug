@@ -1,0 +1,16 @@
+extends ../layout
+
+
+block content
+    h4 new Service form
+    form.form-horizontal( method="post" enctype="multipart/form-data") 
+        .form-group 
+            input.form-control(type="text" name="servNameI" placeholder='Service name' required )
+        .form-group 
+            input.form-control(type="file" name="servImgI" placeholder='Service image' )
+        .form-group 
+            input.form-control(type="number" name="servPriceI" placeholder='Service price' required )
+        .form-group 
+            textarea.form-control(rows='5' name='servDescI' placeholder='Service Descrition' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary

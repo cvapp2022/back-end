@@ -1,0 +1,10 @@
+.education-section 
+    .mt-4
+        h4.section-title=translate[lang].edu
+    div 
+        for edu in cv.CVEdu 
+            include ../items/edu
+if side ==='main'
+    .b-section
+    .b-border 
+    .b-section.mb-4

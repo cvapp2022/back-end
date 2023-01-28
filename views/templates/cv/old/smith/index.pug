@@ -1,0 +1,51 @@
+extends ../base
+
+block style 
+    link(rel="stylesheet", href="/templates/smith.css")
+block content
+    .container 
+        .row
+            .col-sm-8.my-5
+                div.mb-4 
+                    h4.font-weight-bolder Smith doe
+                    h6 Full Stack Web Developer
+                .profile-section.mb-2
+                    h4.font-weight-bold Profile
+                    p.font-weight-bold Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt, consectetur at, harum eius perferendis consequatur aut repudiandae mollitia voluptatum nostrum veritatis a magnam pariatur quasi ex! Voluptatum, sunt eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam ratione placeat numquam soluta et eveniet quasi officiis vel nulla explicabo quaerat aspernatur molestiae impedit, ipsam, inventore est, tempore odit! 
+                .experience-section.mb-2
+                    h4.font-weight-bold Experience
+                    include ./exp
+                    include ./exp
+                .education-section.mb-2
+                    h4.font-weight-bold Education
+                    include ./edu
+                    include ./edu
+            .col-sm-4.py-5.l-border
+                .details-section.font-weight-bold.mb-2
+                    h4 Details
+                    p Syria aleppo Al-shanqiti street
+                    p Tel 1234567890
+                    p deadman100200@gmail.com
+                    p www.google.com
+                .skills-section.font-weight-bold.mb-2
+                    h4 Skills
+                    p html
+                    p css
+                    p javascript
+                    p nodejs
+                    p Expressjs
+                    p PHP
+                    p Laravel
+                    p Vuejs
+                    p Vuex
+                    p Nextjs
+                    p redux
+                    p dart
+                    p flutter
+                    p bloc with cubit
+                .languages-section.font-weight-bold.mb-2
+                    h4 Languages 
+                    p English
+                        span Native
+                    p Spanish
+                        span Proficient 

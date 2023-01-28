@@ -1,0 +1,16 @@
+.awOne.my-1(class=side ==='main' ? "item-circle" : "")
+    .ps-4
+        h6.fw-bold=aw.AwTitle
+        .row
+            if side ==='side'
+                .col-sm-12
+                    p!=aw.AwTitle
+                .col-sm-12.mb-2  
+                    p 2020-2021
+            if side ==='main'
+                .d-flex
+                    p!=aw.AwTitle
+                    p.ms-2 |  2020-2021 
+        .row
+            .col-sm-12
+                p!=aw.AwDesc

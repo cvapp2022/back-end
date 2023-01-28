@@ -1,0 +1,17 @@
+extends ../layout
+
+
+block content
+
+    h4 list of payments 
+    each request in requests
+        .card.my-2
+            .card-body
+                .d-flex.justify-content-between
+                    h5.text-center mobile: 
+                        span=request.RequestPNumber
+                    h5.text-center operation: 
+                        span=request.RequestOpNumber
+                    .d-flex 
+                        a(href="/Cpanel/Payments/"+request._id+"/apply").btn.btn-primary apply
+                        //- button(data-Serv=request._id).btn.btn-secondary.publishServBtn publish

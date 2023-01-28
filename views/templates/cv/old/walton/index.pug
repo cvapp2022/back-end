@@ -1,0 +1,48 @@
+extends ../base
+
+block style 
+    link(rel="stylesheet", href="/templates/walton.css")
+block content
+    .container-fluid.pl-4
+        .row.my-4
+            .col-sm-3.d-flex.align-items-center.justify-content-center  
+                img(src="/templates/avatar.png", style="width:150px" alt="").img-fluid.rounded-circle
+            .col-sm-9.profile-bg
+                .profile-section.my-3
+                    h4 Andreas Walton
+                    h4 Full Stack Web Developer
+                    p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum aut ipsam earum aspernatur quasi quae. Consequuntur, quia enim voluptatibus eum, aliquid natus officia facere voluptatem iste, esse expedita eligendi.e Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus distinctio voluptates delectus ratione asperiores quia sit commodi reiciendis quaerat similique? Dolores suscipit fugiat cum aliquam. Ipsa ipsam recusandae ratione laborum.
+        .row.font-weight-bold
+            .col-sm-6
+                p deadman100@gmail.com
+                p newyork , Usa
+                p linkdein.com/deadman
+            .col-sm-6 
+                p 1234567890
+        .row 
+            .col-sm-12.skills-section.mb-4
+                h4.font-weight-bold Skills
+                .d-flex.flex-wrap
+                    p.skillOne.p-2.my-2.mx-1 html 
+                    p.skillOne.p-2.my-2.mx-1 html
+                    p.skillOne.p-2.my-2.mx-1 css
+                    p.skillOne.p-2.my-2.mx-1 javascript
+                    p.skillOne.p-2.my-2.mx-1 nodejs
+                    p.skillOne.p-2.my-2.mx-1 Expressjs
+                    p.skillOne.p-2.my-2.mx-1 PHP
+                    p.skillOne.p-2.my-2.mx-1 Laravel
+                    p.skillOne.p-2.my-2.mx-1 Vuejs
+                    p.skillOne.p-2.my-2.mx-1 Vuex
+                    p.skillOne.p-2.my-2.mx-1 Nextjs
+                    p.skillOne.p-2.my-2.mx-1 redux
+                    p.skillOne.p-2.my-2.mx-1 dart
+                    p.skillOne.p-2.my-2.mx-1 flutter
+                    p.skillOne.p-2.my-2.mx-1 bloc with cubit
+            .col-sm-12.experience-section.mb-4
+                h4.font-weight-bold Experiences
+                include ./exp
+                include ./exp
+            .col-sm-12.education-section.mb-4 
+                h4.font-weight-bold Educations 
+                include ./edu
+                include ./edu

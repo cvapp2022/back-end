@@ -1,0 +1,16 @@
+extends ../../layout
+
+
+block content
+    h4 new mentor prgram  form
+    form.form-horizontal( method="post" enctype="multipart/form-data") 
+        .form-group 
+            input.form-control(type="text" name="progNameI" placeholder='program name' required )
+        .form-group 
+            input.form-control(type="file" name="progImgI" placeholder='program image' )
+        .form-group 
+            input.form-control(type="number" name="progMeetsNumI" value="1")
+        .form-group 
+            textarea.form-control(rows='5' name='progDescI' placeholder='program Descrition' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary

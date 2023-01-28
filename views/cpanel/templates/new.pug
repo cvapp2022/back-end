@@ -1,0 +1,30 @@
+extends ../layout
+
+
+block content
+    h4 new template form
+    form.form-horizontal( method="post" enctype="multipart/form-data" ) 
+        .form-group 
+            input.form-control(type="text" name="templateNameI" placeholder='template name' required )
+        .form-group 
+            input.form-control(type="file" name="templateThumbI" placeholder='template thumbnail' )
+        .form-group.d-flex
+            .form-check.my-2
+                input.form-check-input(type="radio" name="templatePaidI" value="free")
+                label(for="templatePaidI").form-check-label free
+            .form-check.my-2
+                input.form-check-input(type="radio" name="templatePaidI" value="paid" )
+                label(for="templatePaidI").form-check-label paid
+        .form-group 
+            input.form-control(type="number" name="templatePriceI" placeholder="template price" required )
+        .form-group.d-flex
+            .form-check.my-2
+                input.form-check-input(type="radio" name="templateForI" value="cv")
+                label(for="templateForI").form-check-label CV
+            .form-check.my-2
+                input.form-check-input(type="radio" name="templateForI" value="cl" )
+                label(for="templateForI").form-check-label Cover-Letter
+        .form-group 
+            textarea.form-control(rows='5' name='templateDescI' placeholder='template Descrition' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary

@@ -1,0 +1,14 @@
+extends ../layout
+
+
+block content
+    h4 list of configs 
+    .row 
+        each config in configs
+            .col-sm-4 
+                .card.d-flex.flex-row.justify-content-between.my-2.p-2
+                    h5=config.ConfigName
+                    .mx-2
+                        a(href="/Cpanel/Configs/update/"+config._id).btn.btn-warning.mx-2 U
+                        a(href="").btn.btn-danger X
+

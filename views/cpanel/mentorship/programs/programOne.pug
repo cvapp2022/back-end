@@ -1,0 +1,78 @@
+extends ../../layout
+
+block content
+    .row
+        .col-sm-12 
+            h3 mentors list
+            each mentor in mentors 
+                .card.my-2
+                    .card-body 
+                        .d-flex.justify-content-between
+                            h4=mentor.item.MentorName
+                            if(mentor.inProgram)
+                                button.btn.btn-danger.removeFromProgBtn(data-prog=program._id,data-mentor=mentor.item._id) remove From program 
+                            else
+                                button.btn.btn-primary.addToProgBtn(data-prog=program._id,data-mentor=mentor.item._id) add to program 
+    .row.my-4
+        .col-sm-12 
+            h3 Preparation list
+            -var t=program.ProgPreparation
+            .row 
+                each prep in program.ProgPreparation
+                    .col-sm-3
+                        .card 
+                            .card-body 
+                                h4=prep.PrepareName
+                                a.btn.btn-primary(href="/Cpanel/Mentorship/Programs/"+program._id+"/preparation/"+prep._id) manage
+                
+
+
+            //- - for (var i = 0; i < t; ++i)
+            //- while n < t
+
+block script 
+    script.
+
+        $('.addToProgBtn').click(function(){
+            var mentorId=$(this).data('mentor');
+            var programId=$(this).data('prog');
+            var url='/Cpanel/Mentorship/Programs/addMentorToProg';
+            var data = {
+                mentorId,
+                programId
+            }
+            console.log(data)
+            $.ajax({
+                url:url,
+                method:'post',
+                data:data,
+                success:function(){
+                    console.log('done')
+                    location.reload()
+                }
+            })
+        });
+
+        $('.removeFromProgBtn').click(function(){
+            var mentorId=$(this).data('mentor');
+            var programId=$(this).data('prog');
+            var url='/Cpanel/Mentorship/Programs/removeMentorFromProg';
+            var data = {
+                mentorId,
+                programId
+            }
+            console.log(data)
+            $.ajax({
+                url:url,
+                method:'post',
+                data:data,
+                success:function(){
+                    console.log('done')
+                    location.reload()
+                }
+            })
+
+        })
+
+
+

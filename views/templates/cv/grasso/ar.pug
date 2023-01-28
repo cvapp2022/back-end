@@ -1,0 +1,121 @@
+extends ../base
+
+block style
+    link(rel="stylesheet", href="/templates/grasso.css")
+    style.
+        html { 
+            print-color-adjust:exact;
+            -webkit-print-color-adjust: exact;
+        }
+        :root{
+            --bs-border-width:1px !important;
+            --bs-border-color:#d7d7d7  !important
+        }
+        p {
+            margin: 0;
+        }
+        .b-border {
+            border-bottom: 1px black solid
+        }
+
+        .l-border {
+            border-left: 1px black solid;
+        }
+
+        .full-name {
+            font-size: 46px;
+        }
+
+        .skills-section,
+        .awards-section,
+        .education-section,
+        .experience-section,
+        .org-section,
+        .profile-section,
+        .proj-section,
+        .reff-section,
+        .skills-section {
+            width: fit-content;
+        }
+        
+        .expOne,
+        .awOne,
+        .eduOne,
+        .orgOne,
+        .projOne,
+        .reffOne,
+        .skillOne,
+        .profileOne,
+        .contactList
+        {
+            color:#686868;
+        }
+        .section-title {
+            font-size: 38px
+        }
+        .item-circle::before{
+                content: '';
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                -moz-border-radius: 7.5px;
+                -webkit-border-radius: 7.5px;
+                border-radius: 7.5px;
+                background-color: #686868;
+                position: relative;
+                top: 24px;
+                left: 8px;
+        }
+    link(rel="stylesheet", href="/templates/sizing.css")
+block content
+    .container
+        .row.py-3.mb-4.mx-5.border-bottom
+            .col-sm-8 
+                h5.full-name.text-dark.fw-light=cv.CVFullName
+                h5.fw-light=cv.CVPosition.PositionName
+            .col-sm-4
+                include ./lists/contactList
+        .row
+            .col-sm-4
+                -var side = 'side'
+                for section in cv.CvSections.side 
+                    if section.name ==='profile'
+                        include ./lists/profileList
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList 
+                    if section.name ==='reffrences' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVSkill.length > 0 
+                        include ./lists/skillList
+                    //- if section.name ==='contacts' && cv.CVContact.length > 0 
+                    //-     include ./lists/contactList
+                    if section.name ==='organizations' && cv.CVOrg.length > 0
+                        include ./lists/orgList
+
+            .col-sm-7.px-0.border-start
+                -var side = 'main'
+                for section in cv.CvSections.main 
+                    if section.name ==='profile'
+                        include ./lists/profileList
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList
+                    if section.name ==='reffrences' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVAw.length > 0 
+                        include ./lists/skillList
+                    if section.name ==='contacts' && cv.CVAw.length > 0 
+                        include ./lists/contactList
+                    if section.name ==='organizations' && cv.CVOrg.length > 0
+                        include ./lists/orgList

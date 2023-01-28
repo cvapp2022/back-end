@@ -1,0 +1,13 @@
+extends ../../layout
+
+
+block content
+    h4 Child One page
+    form.form-horizontal( method="post" action="/Cpanel/Mentorship/Services/"+servId+"/child/"+lang+"/update" ) 
+        .form-group 
+            input.form-control(type="text" value=child.ChildName name="servNameI" placeholder='service name' required )
+        .form-group 
+            textarea.form-control(rows='5' name='servDescI' placeholder='service Descreption' required )=child.ChildDesc
+                
+        .form-group 
+            input(type='submit' value='Update').btn.btn-warning

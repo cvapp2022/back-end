@@ -1,0 +1,16 @@
+.expOne.my-1(class=side ==='main' ? "item-circle" : "")
+    .ps-4
+        h6.fw-bold=exp.ExpJob
+        .row
+            if side ==='side'
+                .col-sm-12
+                    p=exp.ExpTitle
+                .col-sm-12.mb-2   
+                    p 2020-2021
+            if side ==='main'
+                .d-flex
+                    p=exp.ExpTitle
+                    p.ms-2 |  2020-2021   
+        .row 
+            .col-sm-12
+                p!=exp.ExpDesc

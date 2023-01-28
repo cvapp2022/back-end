@@ -1,0 +1,13 @@
+extends ../layout
+
+
+block content
+    h4  template list
+    for template in templates
+        .card.my-2
+            .card-body 
+                .d-flex.justify-content-between 
+                    h4=template.TemplateName
+                    .d-flex 
+                        a.btn.btn-warning.mx-1(href="/cpanel/Templates/update/"+template._id) Update
+                        a.btn.btn-danger.mx-1(href="/cpanel/Templates/delete/"+template._id) Delete

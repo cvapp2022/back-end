@@ -1,0 +1,37 @@
+extends ../../layout
+
+block style
+    link(rel="stylesheet" href="/datatables/css/dataTables.bootstrap4.min.css")
+
+block content
+    h4 Posts List
+    .row 
+        .col-sm-12 
+            table( id="example" class="table table-bordered" style="width:100%")
+                thead
+                    tr
+                        th  Post Title
+                        th Category
+                        th  en   ar 
+                tbody
+                    for post in posts
+                        tr
+                            td=post.PostTitle
+                            td
+                                a(href="")=post.PostCategory.CategoryTitle
+                            td.d-flex
+                                if(post.PostChild.filter(e => e.PostLang === 'en').length > 0)
+                                    a(href="updEn") updEn
+                                else
+                                    a(href="/cpanel/Blog/Post/"+post._id+"/en/new") +En
+                                if(post.PostChild.filter(e => e.PostLang === 'ar').length > 0)
+                                    a(href="updEn") updAr
+                                else
+                                    a(href="/cpanel/Blog/Post/"+post._id+"/ar/new") +Ar
+block script
+    script(src="/datatables/js/dataTables.bootstrap4.min.js") 
+    script(src="/datatables/js/jquery.dataTables.min.js") 
+    script.
+        $(document).ready(function () {
+            $('#example').DataTable();
+        }); 

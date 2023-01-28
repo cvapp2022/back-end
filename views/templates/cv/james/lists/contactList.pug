@@ -1,0 +1,46 @@
+.contacts-section.mb-5
+    .mb-4
+        h4.section-title=translate[lang].contact
+        .d-flex.align-items-center
+            span.fas.fa-map-marker-alt.me-2
+            p=cv.CVAddress 
+        .d-flex.align-items-center
+            span.fas.fa-phone.me-2
+            p 1234567890
+        for contact in cv.CVContact
+            .d-flex.align-items-center
+                if(contact.CKey==='mail')
+                    span.fas.fa-envelope.me-2
+                    p=contact.CValue
+                if(contact.CKey==='facebook')
+                    span.fab.fa-facebook.me-2
+                    p facebook.com/
+                        span=contact.CValue
+                if(contact.CKey==='twitter')
+                    span.fab.fa-twitter.me-2
+                    p twitter.com/
+                        span=contact.CValue
+                if(contact.CKey==='linkedin')
+                    span.fab.fa-linkedin.me-2
+                    p linkedin.com/
+                        span=contact.CValue
+                if(contact.CKey==='google')
+                    span.fab.fa-google.me-2
+                    p=contact.CValue
+                if(contact.CKey==='github')    
+                    span.fab.fa-github.me-2
+                    p github.com/
+                        span=contact.CValue
+        //- .d-flex.align-items-center
+        //- .d-flex.align-items-center
+        //-     
+        //-     p twiter.com/Blaxk
+        //- .d-flex.align-items-center
+        //-     
+        //-     p linkedin.com/Blaxk
+        //- .d-flex.align-items-center
+        //-     span.fab.fa-google.me-2
+        //-     p Google
+        //- .d-flex.align-items-center
+        //-     span.fab.fa-github.me-2
+        //-     p github.com/

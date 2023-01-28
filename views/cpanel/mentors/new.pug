@@ -1,0 +1,20 @@
+extends ../layout
+
+
+block content
+    h4 new mentor form
+    form.form-horizontal( method="post" enctype="multipart/form-data") 
+        .form-group 
+            input.form-control(type="text" name="mentorNameI" placeholder='mentor name' required )
+        .form-group 
+            input.form-control(type="email" name="mentorMailI" placeholder='mentor mail' required )
+        .form-group 
+            input.form-control(type="text" name="mentorPhoneI" placeholder='mentor phone' required )
+        .form-group 
+            input.form-control(type="text" name="mentorPassI" placeholder='mentor password' required )
+        .form-group 
+            input.form-control(type="file" name="mentorImgI" placeholder='mentor image' )
+        .form-group 
+            textarea.form-control(rows='5' name='mentorDescI' placeholder='mentor Descrition' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary

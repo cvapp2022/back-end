@@ -1,0 +1,60 @@
+extends ../layout
+
+
+block content
+    each service in services
+        .card.my-2
+            .card-body
+                .d-flex.justify-content-between
+                    img(src="" alt="service image")
+                    h4.text-center=service.ServName
+                    .d-flex 
+                        a(href="/Cpanel/Services/"+service._id+"/child/en").mx-2 en 
+                        a(href="/Cpanel/Services/"+service._id+"/child/ar").mx-2 ar 
+                    .d-flex 
+                        if service.ServStatus == 1
+                            button(data-Serv=service._id).btn.btn-warning.suspendServBtn Suspend
+                        if service.ServStatus == 0
+                            button(data-Serv=service._id).btn.btn-secondary.publishServBtn publish
+                        a(href="/Cpanel/Services/"+service._id).btn.btn-primary manage
+
+
+block script 
+    script.
+
+        $('.publishServBtn').click(function(){
+
+            var url = '/Cpanel/Services/publishService';
+            var serviceId=$(this).data('serv')
+            var data ={
+                serviceId
+            };
+
+            $.ajax({
+                url:url,
+                method:'put',
+                data:data,
+                success:function(resp){
+                    location.reload()
+                }
+            })
+        })
+
+
+        $('.suspendServBtn').click(function(){
+
+            var url = '/Cpanel/Services/suspendService';
+            var serviceId=$(this).data('serv')
+            var data ={
+                serviceId
+            };
+            console.log('prgram updated')
+            $.ajax({
+                url:url,
+                method:'put',
+                data:data,
+                success:function(resp){
+                    location.reload()
+                }
+            })
+        })

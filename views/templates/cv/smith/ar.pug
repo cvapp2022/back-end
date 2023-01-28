@@ -1,0 +1,74 @@
+extends ../base
+
+block style
+    style.
+        p{
+            margin: 0 !important;
+        }
+        .h4, .h5, .h6, h4, h5, h6 {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .details-item{
+            width:30%;
+        }
+        .section-title , .item-title{
+            font-weight: bold !important;
+        }
+        .date{
+            font-size: 12px !important;
+            font-style: oblique;
+        }
+    link(rel="stylesheet", href="/templates/sizing.css")
+    link(rel='stylesheet', href="/templates/flex.css")
+    link(rel='stylesheet' href="/templates/font.css")
+block content 
+    .container-fluid.ml-5
+        .row.d-flex.mt-6
+            .col-xs-3
+                img(src="/templates/avatar.jpg" style="max-width:90%" alt="").img-fluid.img-circle.mx-auto
+            .col-xs-9.p-4(style="background-color:#a9a9a9 !important; color:white !important;")
+                h4(style="font-size: 36px") Ahmad Al-Aswad
+                h4.pb-1(style="border-bottom:1px white solid !important; width:fit-content !important") Full Stack Web Developer   
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, quia ipsa quidem, commodi incidunt animi iste, ut quaerat sunt error inventore natus quos! Placeat saepe veritatis vel illo, ipsa voluptatum!
+
+        .row
+            .col-xs-12.mx-0.mt-4.d-flex.flex-wrap.justify-content-start
+                .details-item.d-flex
+                    p Tw
+                    p Twitter/deadman962011
+                .details-item.d-flex
+                    p Face
+                    p Twitter/deadman962011
+                .details-item.d-flex
+                    p Loc
+                    p Twitter/deadman962011
+                .details-item.d-flex
+                    p Tw
+                    p Twitter/deadman962011
+                .details-item.d-flex
+                    p Tw
+                    p Twitter/deadman962011
+
+
+        .row.d-flex
+            .col-xs-12
+                -var side='main'
+                for section in cv.CvSections.main 
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList 
+                    if section.name ==='reffrences' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVSkill.length > 0 
+                        include ./lists/skillList
+                    if section.name ==='contacts' && cv.CVContact.length > 0 
+                        include ./lists/contactList
+                    if section.name ==='organizations' && cv.CVOrg.length > 0
+                        include ./lists/orgList
+

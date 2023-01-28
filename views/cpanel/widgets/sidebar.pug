@@ -1,0 +1,167 @@
+nav#sidebar.font-weight-normal
+  .sidebar-header
+    h3     
+  ul.list-unstyled.components
+    li
+      a.dropdown-toggle(href='#templateCollapse' data-toggle='collapse' aria-expanded='false') Templates
+      ul#templateCollapse.collapse.list-unstyled
+        li 
+          a(href='/Cpanel/Templates/list')  Templates list
+        li
+          a(href='/Cpanel/Templates/new') Add new template
+    li
+      a.dropdown-toggle(href='#mentorCollapse' data-toggle='collapse' aria-expanded='false') Mentors
+      ul#mentorCollapse.collapse.list-unstyled
+        li 
+          a.dropdown-toggle(href='#mentorWithdrawRequestsCollapse' data-toggle='collapse' aria-expanded='false') Withdraw requests
+          ul#mentorWithdrawRequestsCollapse.collapse.list-unstyled
+            li 
+              a(href="/Cpanel/Mentors/Withdraw-requests/") Withdraw requests list  
+        li
+          a(href='/Cpanel/Mentors/new') Add Mentor
+    li
+      a.dropdown-toggle(href='#mentorShipCollapse' data-toggle='collapse' aria-expanded='false') Mentorship
+      ul#mentorShipCollapse.collapse.list-unstyled
+        li
+          a.dropdown-toggle(href='#programCollapse' data-toggle='collapse' aria-expanded='false') Programs
+          ul#programCollapse.collapse.list-unstyled
+            li 
+            a(href="/Cpanel/Mentorship/Programs/list") Programs List
+            li
+              a(href='/Cpanel/Mentorship/Programs/new') Add program
+    li
+      a.dropdown-toggle(href='#blogCollapse' data-toggle='collapse' aria-expanded='false') Blog
+      ul#blogCollapse.collapse.list-unstyled
+        li
+          a.dropdown-toggle(href='#postCollapse' data-toggle='collapse' aria-expanded='false') Posts
+          ul#postCollapse.collapse.list-unstyled
+            li
+              a(href="/Cpanel/Blog/Post/list") Posts List
+            li
+              a(href="/Cpanel/Blog/Post/new") Add Post
+        li
+          a.dropdown-toggle(href='#categoryCollapse' data-toggle='collapse' aria-expanded='false') Categories
+          ul#categoryCollapse.collapse.list-unstyled
+           li
+              a(href='/Cpanel/Blog/Cat/new') Add Category 
+    li
+      a.dropdown-toggle(href='#repoCollapse' data-toggle='collapse' aria-expanded='false') Repositories
+      ul#repoCollapse.collapse.list-unstyled
+        li
+          a.dropdown-toggle(href='#skillRepoCollapse' data-toggle='collapse' aria-expanded='false') skills
+          ul#skillRepoCollapse.collapse.list-unstyled
+            li
+              a(href="/Cpanel/Repo/Skill/list") Skills List
+            li 
+              a(href="/Cpanel/Repo/Skill/new")  add Skill
+        li
+          a.dropdown-toggle(href='#positionRepoCollapse' data-toggle='collapse' aria-expanded='false') Positions
+          ul#positionRepoCollapse.collapse.list-unstyled
+            li
+              a(href="/Cpanel/Repo/position/list") Positions List
+            li 
+              a(href="/Cpanel/Repo/position/new")  add Position
+    li 
+      a.dropdown-toggle(href='#servCollapse' data-toggle='collapse' aria-expanded='false') Services
+      ul#servCollapse.collapse.list-unstyled
+        li
+          a(href="/Cpanel/Services/") Services List
+        li 
+          a(href="/Cpanel/Services/new") Add New Service 
+    li 
+      a.dropdown-toggle(href='#paymentCollapse' data-toggle='collapse' aria-expanded='false') Payments
+      ul#paymentCollapse.collapse.list-unstyled
+        li
+          a(href="/Cpanel/Payments/syriatel/waiting") syriatel payment requests
+        li
+          a(href="/Cpanel/Payments/mtn/waiting") mtn payment requests
+    li 
+      a.dropdown-toggle(href='#configCollapse' data-toggle='collapse' aria-expanded='false') Configs
+      ul#configCollapse.collapse.list-unstyled
+        li 
+          a(href="/Cpanel/Configs/list") Configs list
+        li 
+          a(href="/Cpanel/Configs/new") add new config
+
+style.
+  /* ---------------------------------------------------
+    SIDEBAR STYLE
+  ----------------------------------------------------- */
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #1d2124 ;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  #sidebar .sidebar-header {
+    padding: 20px;
+    background: #1d2124;
+  }
+
+  #sidebar ul.components {
+    padding: 20px 0;
+  }
+
+  #sidebar ul p {
+    color: #fff;
+    padding: 10px;
+  }
+
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  #sidebar ul li a:hover {
+    color: #1d2124;
+    background: #fff;
+  }
+
+  #sidebar ul li.active>a,
+  a[aria-expanded="true"] {
+    color: #fff;
+    background: #1d2124;
+  }
+
+  a[data-toggle="collapse"] {
+    position: relative;
+  }
+
+  #sidebar .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  #sidebar ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #1d2124;
+  }
+  #sidebar a {
+    color:inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  a.article,
+  a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+  }

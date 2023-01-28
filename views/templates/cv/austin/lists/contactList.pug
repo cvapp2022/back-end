@@ -1,0 +1,33 @@
+.contacts-section.my-2
+    h3.mx-2.my-0.pb-2.font-weight-bold=translate[lang].contact
+    .d-flex.flex-column.align-items-start.mx-2
+        .d-flex.align-items-center
+            span.fas.fa-map-marker-alt.me-2
+            p=cv.CVAddress 
+        .d-flex.align-items-center
+            span.fas.fa-phone.me-2
+            p 1234567890
+        for contact in cv.CVContact
+            .d-flex.align-items-center
+                if(contact.CKey==='mail')
+                    span.fas.fa-envelope.me-2
+                    p=contact.CValue
+                if(contact.CKey==='facebook')
+                    span.fab.fa-facebook.me-2
+                    p facebook.com/
+                        span=contact.CValue
+                if(contact.CKey==='twitter')
+                    span.fab.fa-twitter.me-2
+                    p twitter.com/
+                        span=contact.CValue
+                if(contact.CKey==='linkedin')
+                    span.fab.fa-linkedin.me-2
+                    p linkedin.com/
+                        span=contact.CValue
+                if(contact.CKey==='google')
+                    span.fab.fa-google.me-2
+                    p=contact.CValue
+                if(contact.CKey==='github')    
+                    span.fab.fa-github.me-2
+                    p github.com/
+                        span=contact.CValue

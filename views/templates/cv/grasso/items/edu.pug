@@ -1,0 +1,16 @@
+.eduOne.my-1(class=side ==='main' ? "item-circle" : "")
+    .ps-4
+        h6.fw-bold=edu.EduTitle
+        .row
+            if side ==='side'
+                .col-sm-12
+                    p=edu.EduAt
+                .col-sm-12.mb-2  
+                    p 2020-2021
+            if side ==='main'
+                .d-flex
+                    p=edu.EduAt
+                    p.ms-2 |  2020-2021 
+        .row
+            .col-sm-12
+                p!=edu.EduDesc

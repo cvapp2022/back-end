@@ -1,0 +1,32 @@
+extends ../layout
+
+
+block content
+    h4 Update template 
+        span=template 
+    form.form-horizontal( method="post" ) 
+        .form-group 
+            input.form-control(type="text" name="templateNameI" value=template.TemplateName  placeholder='template name' required )
+        .form-group 
+            input.form-control(type="hidden" name="templateThumbI" value=template.TemplateThumb)
+        .form-group.d-flex
+            .form-check.my-2
+                input.form-check-input(type="checkbox" name="templatePaidI" checked=!template.isPaid)
+                label(for="templatePaidI").form-check-label template is paid
+            //- .form-check.my-2
+            //-     input.form-check-input(type="radio" name="templatePaidI" value="paid" checked=template.isPaid )
+            //-     label(for="templatePaidI").form-check-label paid
+        .form-group 
+            input.form-control(type="number" name="templatePriceI" value=template.TemplatePrice placeholder="template price" required )
+        .form-group.d-flex
+            .form-check.my-2
+
+                input.form-check-input(type="radio" name="templateForI" value="cv" checked=(template.TemplateFor==='cv'))
+                label(for="templateForI").form-check-label CV
+            .form-check.my-2
+                input.form-check-input(type="radio" name="templateForI" value="cl" checked=(template.TemplateFor==='cl'))
+                label(for="templateForI").form-check-label Cover-Letter
+        .form-group 
+            textarea.form-control(rows='5' name='templateDescI' placeholder='template Descrition' required )=template.TemplateDesc
+        .form-group 
+            input(type='submit' value="Update").btn.btn-warning

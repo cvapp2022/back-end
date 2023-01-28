@@ -1,0 +1,7 @@
+.skills-section
+    .mt-4
+        h4.section-title=translate[lang].Skills 
+    .d-flex.flex-wrap.w-50
+        for skill in cv.CVSkill
+            .font-weight-bold=skill.SkillTitle
+                span , 

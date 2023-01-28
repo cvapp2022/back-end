@@ -1,0 +1,25 @@
+extends ../../layout
+
+block style
+
+block content
+    h4 Save Post Child
+    form.form-horizontal( method="post" enctype='multipart/form-data' ) 
+        .form-group 
+            input.form-control(type="text" name="postTitleI" placeholder='Post title' required )
+        .form-group 
+            textarea.form-control( name="postDescI" placeholder='Post Short Descreption' required )
+        .form-group 
+            input.form-control(type="file" name="postThumbI" placeholder='Post Thumbnail' )
+        .form-group 
+            textarea(id="tinymce" name="postBodyI" )
+        .form-group 
+            input(type='submit').btn.btn-primary
+block script 
+    script( src="/tinymce/tinymce.min.js")
+    script.
+        tinyMCE.baseURL = "/tinymce";
+        tinyMCE.suffix='.min';
+        tinyMCE.init({
+            selector: 'textarea#tinymce'
+        });

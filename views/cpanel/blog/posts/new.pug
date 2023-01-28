@@ -1,0 +1,14 @@
+extends ../../layout
+
+
+block content
+    h4 new Post form
+    form.form-horizontal( method="post") 
+        .form-group 
+            input.form-control(type="text" name="postTitleI" placeholder='Post title' required )
+        .form-group 
+            select.form-control(name="postCategoryI")
+                for cat in cats
+                    option(value=""+cat._id)=cat.CategoryTitle
+        .form-group 
+            input(type='submit').btn.btn-primary

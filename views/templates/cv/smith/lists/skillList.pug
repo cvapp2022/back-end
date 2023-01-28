@@ -1,0 +1,6 @@
+.skills-section
+    .mt-3
+        h4.section-title(style="color:#a9a9a9 !important;border-bottom:2px #a9a9a9 solid") Skills
+    .d-flex.flex-wrap
+        for skill in cv.CVSkill
+            p.m-2.p-3(style="background-color:#a9a9a9 !important; color:white !important;border-radius:8px")=skill.SkillTitle

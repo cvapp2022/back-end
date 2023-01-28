@@ -1,0 +1,18 @@
+extends ../layout
+
+
+block content
+    h4 New Config Form
+    form.form-horizontal( method="post") 
+        .form-group 
+            input.form-control(type="text" name="configNameI" placeholder='Config name' required )
+        .form-group 
+            select.form-control(name='configValueI')
+                option(value="1") enabled
+                option(value="0") disabled
+        .form-group 
+            input.form-control(type="text" name="configSubValI" placeholder='Config sub value' required )
+        .form-group 
+            textarea.form-control(rows='5' name='configDescI' placeholder='Service Descrition' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary

@@ -1,0 +1,40 @@
+extends ../base
+
+block style 
+    link(rel="stylesheet", href="/templates/jane.css")
+block content
+    .container-fluid 
+        .row
+            div(style='background-color:#8b8b8b').col-sm-3.py-5
+                .d-flex.flex-column.align-items-center.justify-content-center.mb-4
+                    img(src="/templates/avatar.jpg", style="width:150px" alt="").img-fluid.rounded-circle
+                .mx-4
+                    .profile-section.b-border.my-5.pb-4
+                        h4.font-weight-bolder Profile 
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius inventore, ducimus id eum consequatur nulla non ex, iure corporis minima rerum pariatur veritatis! Unde consectetur earum nam natus facilis! Fugiat? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi accusamus at, fuga explicabo porro amet voluptates voluptatem consequatur quia, labore beatae repellat aliquam non quas, omnis saepe optio quasi perspiciatis.
+                    .contacts-section.b-border.my-5.pb-4
+                        h4.font-weight-bolder Social Links
+                        p Facebook : deadman11022
+                        p LinkedIn : deadman22132
+            .col-sm-9.p-5
+                .row.justify-content-between.mb-4.pb-4.b-border 
+                    div 
+                        h1.font-weight-bolder Jhony Cash
+                        p.font-weight-bold Web Developer    
+                    div 
+                        p Aleppo Al-sahqiti street
+                        p 123467980
+                        p deadman23213@asd.cc
+                        p www.google.com
+                .row.mb-4
+                    .experience-section.b-border 
+                        h4.font-weight-bolder Experience
+                        .my-4
+                            include ./exp
+                            include ./exp
+                .row.mb-4
+                    .education-section.b-border
+                        h4.font-weight-bolder Education
+                        .my-4
+                            include ./edu
+                            include ./edu

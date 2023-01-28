@@ -1,0 +1,25 @@
+extends ../../layout
+
+block style
+    link(rel="stylesheet" href="/select2/select2.min.css")
+block content
+    h4 new Skill repo form
+    form.form-horizontal( method="post") 
+        .form-group 
+            input.form-control(type="text" name="skillNameI" placeholder='skill name' required )
+        .form-group 
+            select.form-control.skillPosI(name="skillPosI[]" multiple="multiple")
+                for position in positions 
+                    option(value=""+position._id)=position.PositionName
+        .form-group 
+            textarea.form-control(rows='5' name='skillDescI' placeholder='skill Description' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary
+
+block script 
+    script(src="/select2/select2.min.js") 
+    script.
+        $(document).ready(function() {
+            $('.skillPosI').select2();
+        });
+

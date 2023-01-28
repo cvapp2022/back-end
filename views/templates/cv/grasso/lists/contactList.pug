@@ -1,0 +1,27 @@
+.contactList.row.my-1
+    .d-flex.flex-row-reverse.align-items-center.mb-1
+        span.fas.fa-map-marker-alt.ms-3.text-dark
+        p=cv.CVAddress 
+    .d-flex.flex-row-reverse.align-items-center.mb-1
+        span.fas.fa-phone.ms-3.text-dark
+        p 1234567890
+    for contact in cv.CVContact
+        .d-flex.flex-row-reverse.align-items-center.mb-1
+            if(contact.CKey==='mail')
+                span.fas.fa-envelope.ms-3.text-dark
+                p=contact.CValue
+            if(contact.CKey==='facebook')
+                span.fab.fa-facebook.ms-3.text-dark
+                p=contact.CValue
+            if(contact.CKey==='twitter')
+                span.fab.fa-twitter.ms-3.text-dark
+                p=contact.CValue
+            if(contact.CKey==='linkedin')
+                span.fab.fa-linkedin.ms-3.text-dark
+                p=contact.CValue
+            if(contact.CKey==='google')
+                span.fab.fa-google.ms-3.text-dark
+                p=contact.CValue
+            if(contact.CKey==='github')    
+                span.fab.fa-github.ms-3.text-dark
+                p=contact.CValue

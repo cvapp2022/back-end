@@ -1,0 +1,61 @@
+extends ../../layout
+
+
+block content
+    each program in programs
+
+        .card.my-2
+            .card-body
+                .d-flex.justify-content-between
+                    img(src="" alt="program image")
+                    h4.text-center=program.ProgName
+                    .d-flex 
+                        a(href="/Cpanel/Mentorship/Programs/"+program._id+"/child/en").mx-2 en 
+                        a(href="/Cpanel/Mentorship/Programs/"+program._id+"/child/ar").mx-2 ar 
+                    .d-flex 
+                        if program.ProgStatus == 1
+                            button(data-prog=program._id).btn.btn-warning.suspendProgBtn Suspend
+                        if program.ProgStatus == 0
+                            button(data-prog=program._id).btn.btn-secondary.publishProgBtn publish
+                        a(href="/Cpanel/Mentorship/Programs/"+program._id).btn.btn-primary manage
+
+
+block script 
+    script.
+
+        $('.publishProgBtn').click(function(){
+
+            var url = '/Cpanel/Mentorship/Programs/publishProgram';
+            var programId=$(this).data('prog')
+            var data ={
+                programId
+            };
+
+            $.ajax({
+                url:url,
+                method:'put',
+                data:data,
+                success:function(resp){
+                    location.reload()
+                }
+            })
+        })
+
+
+        $('.suspendProgBtn').click(function(){
+
+            var url = '/Cpanel/Mentorship/Programs/suspendProgram';
+            var programId=$(this).data('prog')
+            var data ={
+                programId
+            };
+            console.log('prgram updated')
+            $.ajax({
+                url:url,
+                method:'put',
+                data:data,
+                success:function(resp){
+                    location.reload()
+                }
+            })
+        })

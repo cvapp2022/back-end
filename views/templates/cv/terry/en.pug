@@ -1,0 +1,115 @@
+extends ../base
+
+block style
+    style.
+        html { 
+            print-color-adjust:exact;
+            -webkit-print-color-adjust: exact;
+        }
+        .h4, .h5, .h6, h4, h5, h6 {
+            margin-top: 6px;
+            margin-bottom: 4px;
+        }
+        .b-border{
+            border-bottom:1px black solid
+        }
+        .b-section{
+            width: 50px;
+            height: 1px;
+            background-color: black!important;
+        }
+        .b-section-h{
+            width: 50px;
+            height: 2px;
+            background-color: black!important;
+        }
+
+        .text-end{
+            text-align: end;
+        }
+        .d-flex{
+            display: -webkit-box !important;
+            display: -webkit-flex !important;
+            display: flex;
+        }
+        .flex-wrap{
+            -webkit-flex-wrap: wrap !important;
+            flex-wrap: wrap;
+        }
+        .flex-nowrap{
+            -webkit-flex-wrap: nowrap !important;
+            flex-wrap: nowrap;
+        }
+        .flex-column{
+            -webkit-flex-direction:column;
+            flex-direction: column;
+            
+        }
+        .align-items-end{
+            -webkit-align-items:flex-end;
+            align-items:flex-end;
+            /* -webkit-box-align: end; */
+            
+        }
+
+    link(rel="stylesheet", href="/templates/sizing.css")
+    link(rel='stylesheet', href="/templates/flex.css")
+block content 
+    .container-fluid.p-4
+        .row 
+            .col-sm-4.text-end
+                p Aleppo Syria 
+                p +963959991985
+                p ahmad.alaswad.dev@gmail.com
+            .col-sm-8.pb-2
+                .pl-5
+                    .pb-5 
+                        h4(style="font-size: 60px;") Ahmad Al-Aswad
+                        h5 Full Stack Web Developer
+                    .b-section
+                    .b-border 
+                    .b-section
+        .row
+            .col-sm-4
+                -var side='side'
+                for section in cv.CvSections.side 
+                    if section.name ==='profile'
+                        include ./lists/profileList
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList 
+                    if section.name ==='reffrences' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVSkill.length > 0 
+                        include ./lists/skillList
+                    if section.name ==='contacts' && cv.CVContact.length > 0 
+                        include ./lists/contactList
+                    if section.name ==='organizations' && cv.CVOrg.length > 0
+                        include ./lists/orgList
+            .col-sm-8 
+                .pl-5
+                    -var side='main'
+                    for section in cv.CvSections.main 
+                        if section.name ==='profile'
+                            include ./lists/profileList
+                        if section.name ==='experiences' && cv.CVExp.length > 0
+                            include ./lists/expList
+                        if section.name ==='educations' && cv.CVEdu.length > 0
+                            include ./lists/eduList
+                        if section.name ==='reffrences' && cv.CVReff.length > 0
+                            include ./lists/reffList
+                        if section.name ==='projects'  && cv.CVProj.length > 0 
+                            include ./lists/projList
+                        if section.name ==='awards' && cv.CVAw.length > 0 
+                            include ./lists/awList
+                        if section.name ==='skills' && cv.CVSkill.length > 0 
+                            include ./lists/skillList
+                        if section.name ==='contacts' && cv.CVContact.length > 0 
+                            include ./lists/contactList
+                        if section.name ==='organizations' && cv.CVOrg.length > 0
+                            include ./lists/orgList

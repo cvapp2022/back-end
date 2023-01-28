@@ -1,0 +1,45 @@
+extends ../base
+
+block style
+
+block content 
+    .container-fluid.p-5
+        .row
+            .col-sm-4 
+                h3 Side
+                for section in cv.CvSections.side 
+                    if section.name ==='profile'
+                        include ./lists/profileList
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList 
+                    if section.name ==='reffrences' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVSkill.length > 0 
+                        include ./lists/skillList
+                    if section.name ==='contacts' && cv.CVContact.length > 0 
+                        include ./lists/contactList
+            .col-sm-8 
+                h3 Main
+                for section in cv.CvSections.main 
+                    if section.name ==='profile'
+                        include ./lists/profileList
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList
+                    if section.name ==='reffrencess' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVAw.length > 0 
+                        include ./lists/skillList
+                    if section.name ==='contacts' && cv.CVAw.length > 0 
+                        include ./lists/contactList

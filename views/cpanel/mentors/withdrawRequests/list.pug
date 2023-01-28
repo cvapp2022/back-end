@@ -1,0 +1,39 @@
+extends ../../layout
+
+block content
+    h4 withdraw requests list
+    each withdrawRequest in withdrawRequests
+        .card.my-2
+            .card-body
+                .container 
+                    .row 
+                        .col-sm-12.d-flex.justify-content-between
+                            h5.text-center Payment method:
+                                span=withdrawRequest.withdrawReqMethod
+                            h5.text-center Value:
+                                span=withdrawRequest.withdrawReqValue
+                            h5.text-center Target:
+                                span=withdrawRequest.withdrawReqTarget
+                    .row 
+                        .col-sm-12.py-3.h-25.overflow-auto
+                            ul.list-group
+                                each transaction in withdrawRequest.withdrawReqMentor.MentorTransaction
+                                    li.list-group-item.py-3
+                                        .row 
+                                            .col-sm-2.d-flex.text-center.h4
+                                                if transaction.transactionType==='add'
+                                                    span +
+                                                if transaction.transactionType==='withdraw'
+                                                    span -
+                                                div=transaction.transactionValue
+                                            .col-sm-10.d-flex
+                                                .d-flex.flex-column
+                                                    .h6=transaction.transactionDesc
+                                                    .d-flex.align-items-center.text-muted.my-2
+                                                        div=transaction.createdAt
+                                //- li.list-group-item.py-3=withdrawRequest.withdrawReqMentor
+
+                        //- span=request.RequestPNumber
+                        //- span=request.RequestOpNumber
+                    .row 
+                        a(href="/Cpanel/Mentors/Withdraw-requests/"+withdrawRequest ._id+"/apply").btn.btn-primary apply

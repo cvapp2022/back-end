@@ -1,0 +1,10 @@
+.skills-section.mb-4.text-end
+    .mb-4.d-flex.flex-column(class=side=== "side" ? "align-items-end" : "align-items-start")
+        h4 Skills
+        .b-section-h
+    for skill in cv.CVSkill
+         p.font-weight-bold=skill.SkillTitle
+if side ==='main'
+    .b-section
+    .b-border 
+    .b-section.mb-4

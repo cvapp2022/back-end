@@ -1,0 +1,69 @@
+extends ../base
+
+block style
+    style.
+        .sub{
+            color: rgb(114, 114, 114) !important;
+            font-weight: 500 !important;
+            font-size: 16px;
+        }
+    link(rel="stylesheet" href="/templates/sizing.css")
+    link(rel='stylesheet' href="/templates/flex.css")
+    link(rel='stylesheet' href="/templates/font.css")
+block content 
+    .container-fluid
+        .row.d-flex.my-7
+            .col-sm-4.py-6.text-center.border-end
+                .d-flex.flex-column.align-items-center.justify-content-center
+                    img(src="/templates/avatar.jpg" style="width:200px" alt="").img-fluid.img-circle
+                    .d-flex.flex-column.align-items-center.my-4
+                        h3.mx-6.my-2(style="color:green !important;font-size:46px") Ahmad Al-Aswad
+                        h5.mt-2 Full-Stack Web Developer
+                .mx-6.my-2
+                    .details-section
+                        h3.mx-2.my-0.pb-2.font-weight-bold(style="color:green") Details
+                        .d-flex.flex-column.align-items-start.mx-2
+                            div
+                                h6 Syria Aleppo Al-furqan street
+
+                    -var side='side'
+                    for section in cv.CvSections.side 
+                        if section.name ==='profile'
+                            include ./lists/profileList
+                        if section.name ==='experiences' && cv.CVExp.length > 0
+                            include ./lists/expList
+                        if section.name ==='educations' && cv.CVEdu.length > 0
+                            include ./lists/eduList 
+                        if section.name ==='reffrences' && cv.CVReff.length > 0
+                            include ./lists/reffList
+                        if section.name ==='projects'  && cv.CVProj.length > 0 
+                            include ./lists/projList
+                        if section.name ==='awards' && cv.CVAw.length > 0 
+                            include ./lists/awList
+                        if section.name ==='skills' && cv.CVSkill.length > 0 
+                            include ./lists/skillList
+                        if section.name ==='contacts' && cv.CVContact.length > 0 
+                            include ./lists/contactList
+                        if section.name ==='organizations' && cv.CVOrg.length > 0
+                            include ./lists/orgList
+            .col-sm-8.px-4.py-6
+                -var side='main'
+                for section in cv.CvSections.main 
+                    if section.name ==='profile'
+                        include ./lists/profileList
+                    if section.name ==='experiences' && cv.CVExp.length > 0
+                        include ./lists/expList
+                    if section.name ==='educations' && cv.CVEdu.length > 0
+                        include ./lists/eduList 
+                    if section.name ==='reffrences' && cv.CVReff.length > 0
+                        include ./lists/reffList
+                    if section.name ==='projects'  && cv.CVProj.length > 0 
+                        include ./lists/projList
+                    if section.name ==='awards' && cv.CVAw.length > 0 
+                        include ./lists/awList
+                    if section.name ==='skills' && cv.CVSkill.length > 0 
+                        include ./lists/skillList
+                    if section.name ==='contacts' && cv.CVContact.length > 0 
+                        include ./lists/contactList
+                    if section.name ==='organizations' && cv.CVOrg.length > 0
+                        include ./lists/orgList

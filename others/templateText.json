@@ -1,0 +1,26 @@
+{
+    "en":{
+        "exp":"Experiences",
+        "edu":"Educations",
+        "reff":"Reffrences",
+        "org":"Organizations",
+        "aw":"Awards",
+        "contact":"Contacts",
+        "Skills":"Skills",
+        "Profile":"Profile",
+        "Proj":"Projects",
+        "at":"at"
+    },
+    "ar":{
+        "exp":"الخبرات",
+        "edu":"التعليم",
+        "reff":"المراجع",
+        "org":"المنظمات/تطوعي",
+        "aw":"جوائز",
+        "Proj":"المشاريع",
+        "contact":"التواصل",
+        "Skills":"مهارات",
+        "Profile":"لمحة",
+        "at":"في"
+    }
+}

@@ -1,0 +1,13 @@
+extends ../../layout
+
+block style
+
+
+block content
+    h4 position list
+    for position in positions 
+        .badge.badge-primary.m-1.p-1.text-center=position.PositionName
+            a(href=`/Cpanel/Repo/position/${position._id}/delete`).btn.btn-secondary.btn-sm.border-rounded.mx-2 x
+
+
+

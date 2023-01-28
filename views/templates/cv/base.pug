@@ -1,0 +1,25 @@
+doctype html
+html(lang=cv.CVLang dir=(cv.CVLang=='ar'?'rtl':'ltr' ))
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=0")
+        if cv.CVLang=='ar'
+            link(rel="stylesheet", href="bootstrap/5/css/bootstrap.rtl.min.css")
+        if cv.CVLang=='en'
+            link(rel="stylesheet", href="bootstrap/5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="fontawesome/css/all.min.css")
+        style.
+            @page {
+                size: 210mm 297mm;
+            }
+
+            .page {
+                page-break-after: always;
+            }
+
+        block style
+    body
+        block content
+
+

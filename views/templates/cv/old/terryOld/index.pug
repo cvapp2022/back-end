@@ -1,0 +1,77 @@
+extends ../base
+
+block style
+    link(rel="stylesheet", href="/templates/terry.css")
+block content 
+    .container-fluid.p-5
+        .row 
+            .col-sm-4.text-end
+                p Aleppo Syria Al-shanqiti street
+                p +9639521991999
+                p deadman96666@gmail.com
+            .col-sm-8.pb-4
+                .pl-5
+                    .pb-5 
+                        h4(style="font-size: 100px;") Terry
+                        h5 Full Stack Web De veloper
+                    .b-section
+                    .b-border 
+                    .b-section
+        .row        
+            .col-sm-4
+                for section  in cv.CvSections.side
+                    if section.name === 'contacts'
+                        .contacts-section.mb-5
+                            .mb-4.d-flex.flex-column.align-items-end
+                                h4 CONTACTS
+                                .b-section-h
+                            .text-end 
+                                div
+                                    h6.font-weight-bold Facebook
+                                    p facebook.com/Blaxk
+                                div  
+                                    h6.font-weight-bold Twitter
+                                    p twiter.com/Blaxk
+                                div  
+                                    h6.font-weight-bold LinkedIn
+                                    p linkedin.com/Blaxk
+                                div  
+                                    h6.font-weight-bold Google
+                                    p google.com/
+                    if section.name === 'skills'
+                        .skills-section.mb-4.text-end
+                            .mb-4.d-flex.flex-column.align-items-end
+                                h4 Skills
+                                .b-section-h
+                            for item in cv.CVSkill
+                                p.font-weight-bold=item.SkillTitle
+                    if section.name === 'reffrencess'
+                        .reffrences-section.mb-4.text-end
+                            .mb-4.d-flex.flex-column.align-items-end
+                                h4 Reffrences
+                                .b-section-h
+
+            .col-sm-8
+                .pl-5
+                    for section in cv.CvSections.main
+                        if section.name === 'experiences'
+                            .experince-section
+                                .mb-4
+                                    h4 Work Experiences
+                                    .b-section-h
+                                div
+                                    for expItem in cv.CVExp 
+                                        include ./exp
+                            .b-section
+                            .b-border 
+                            .b-section.mb-4
+                        if section.name === 'educations'
+                            .education-section 
+                                .mb-4
+                                    h4 Education
+                                    .b-section-h
+                                div 
+                                    include ./edu
+
+    h4=cv.CvSections
+

@@ -1,0 +1,18 @@
+extends ../layout
+
+
+block content
+    h4 update Config Form
+    form.form-horizontal( method="post") 
+        .form-group 
+            input.form-control(type="text" name="configNameI" placeholder='Config name' value=config.ConfigName required )
+        .form-group 
+            select.form-control(name='configValueI')
+                option(value="1" selected=(config.ConfigValue===1) ) enabled
+                option(value="0" selected=(config.ConfigValue===0) ) disabled
+        .form-group 
+            input.form-control(type="text" name="configSubValI" placeholder='Config sub value' value=config.ConfigSubValue required )
+        .form-group 
+            textarea.form-control(rows='5' name='configDescI' placeholder='Service Descrition' required )=config.ConfigDesc
+        .form-group 
+            input(type='submit' value='update').btn.btn-warning

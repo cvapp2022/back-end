@@ -1,0 +1,12 @@
+extends ../../layout
+
+
+block content
+    h4 new position repo form
+    form.form-horizontal( method="post") 
+        .form-group 
+            input.form-control(type="text" name="positionNameI" placeholder='position name' required )
+        .form-group 
+            textarea.form-control(rows='5' name='positionDescI' placeholder='position Description' required ) 
+        .form-group 
+            input(type='submit').btn.btn-primary

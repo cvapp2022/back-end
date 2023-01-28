@@ -1,0 +1,14 @@
+extends ../../layout
+
+block style
+    style.
+
+
+block content
+    h4 new skill list
+    for skill in skills 
+        .badge.badge-primary.m-1.p-1.text-center=skill.SkillName
+            a(href=`/Cpanel/Repo/Skill/${skill._id}/delete`).btn.btn-secondary.btn-sm.border-rounded.mx-2 x
+
+
+

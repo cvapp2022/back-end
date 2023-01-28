@@ -1,0 +1,25 @@
+extends ../../../layout
+
+block style
+    link(rel="stylesheet" href="/dropzone/dropzone.min.css")
+block content
+    h4  Preparation one Page
+    .row 
+        .col-sm-6  
+            form.dropzone.dz-clickable#upload-en
+        .col-sm-6
+            form.dropzone.dz-clickable#upload-ar
+            h4=prep
+
+
+block script
+    script(src="/dropzone/dropzone.min.js")
+    script.
+        let myDropzone = new Dropzone("form#upload-en", { 
+            url: "/Cpanel/Mentorship/Programs/#{progId}/preparation/#{prep._id}/upload/en",
+            //- acceptedFiles:'image/*,application/pdf,'
+        }); 
+        let myDropzone2 = new Dropzone("form#upload-ar", { 
+            url: "/Cpanel/Mentorship/Programs/#{progId}/preparation/#{prep._id}/upload/ar",
+            //- acceptedFiles:'image/*,application/pdf,'
+        });

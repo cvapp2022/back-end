@@ -1,0 +1,10 @@
+extends ../../../layout
+
+block content
+    h4 new Preparation Form
+    form.form-horizontal( method="post" )  
+        .form-group 
+            input.form-control(type="text" name="prepNameI" placeholder='preperation name' required )
+
+        .form-group 
+            input(type='submit').btn.btn-primary

@@ -1,0 +1,13 @@
+extends ../../layout
+
+
+block content
+    h4 new Category form
+    form.form-horizontal( method="post") 
+        .form-group 
+            input.form-control(type="text" name="CategoryTitleI" placeholder='Category title' required )
+        .form-group 
+            input.form-control(type="file" name="CategoryThumbI" placeholder='category image' )
+        .form-group 
+            textarea.form-control(rows='5' name='CategoryDescI' placeholder='mentor Descrition' required ) 
+            input(type='submit').btn.btn-primary

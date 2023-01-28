@@ -3,7 +3,22 @@ var ObjectId = require('mongoose').Types.ObjectId;
 const { google } = require('googleapis');
 const stream = require('stream');
 // var pdf = require('html-pdf');
-const puppeteer = require('puppeteer');
+
+
+// const puppeteer = require('puppeteer');
+let chrome = { executablePath:'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe' };
+let puppeteer;
+
+if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+  // running on the Vercel platform.
+  chrome = require('chrome-aws-lambda');
+  puppeteer = require('puppeteer-core');
+} else {
+  // running locally.
+  puppeteer = require('puppeteer');
+}
+
+
 const path = require('path');
 const CvModel = require('../../models/CvSchema');
 const CvMetaModel = require('../../models/cv/CvMetaSchema')
@@ -685,6 +700,8 @@ exports.Render = function (req, res) {
                         // launch a new chrome instance
                         const browser = await puppeteer.launch({
                             headless: true,
+                            executablePath: await chrome.executablePath,
+                            ignoreHTTPSErrors: true,
                             // executablePath:'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
                         })
         
@@ -730,8 +747,8 @@ exports.Render = function (req, res) {
                         console.log(error.stack)
                         return res.json({
                             success: false,
-                            payload: null,
-                            message:error
+                            payload: error.stack,
+                            message:'somthing went wrong while generate document'
                         });
                     }
 

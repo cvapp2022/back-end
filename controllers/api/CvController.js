@@ -730,8 +730,8 @@ exports.Render = function (req, res) {
                         console.log(error.stack)
                         return res.json({
                             success: false,
-                            payload: null,
-                            message:error.stack
+                            payload: error.stack,
+                            message:'somtging wnt wrong while render document'
                         });
                     }
 

@@ -685,7 +685,7 @@ exports.Render = function (req, res) {
                         // launch a new chrome instance
                         const browser = await puppeteer.launch({
                             headless: true,
-                            executablePath:'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
+                            // executablePath:'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
                         })
         
                         // create a new page

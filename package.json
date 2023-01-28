@@ -13,7 +13,6 @@
     "express-jwt": "^6.1.0",
     "express-validator": "^6.12.1",
     "googleapis": "^100.0.0",
-    "html-pdf": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.7",
     "mongoose-sequence": "^5.3.1",
@@ -24,13 +23,17 @@
     "path-posix": "^1.0.0",
     "paypal-rest-sdk": "^1.8.1",
     "pug": "^3.0.2",
-    "puppeteer": "^19.3.0",
+    
     "query-string": "^7.1.1",
     "simple-signal-server": "^3.0.0",
     "socket.io": "^4.5.1",
     "stream": "^0.0.2",
     "stripe": "^10.11.0"
   },
+  "devDependencies": {
+    "puppeteer": "^19.3.0"
+  }
+  ,
   "browserslist": [
     "Safari >=4"
   ],

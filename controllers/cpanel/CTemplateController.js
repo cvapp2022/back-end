@@ -28,48 +28,48 @@ exports.NewPost = function (req, res) {
         });
     } 
 
-    //upload Template Thumbnail
-    facades.uploadFileTo(req.files.templateThumbI[0], 'template',null, function (x) {
+    //save Template
+    let isPaid;
+    let price;
+    var templatePaid = req.body.templatePaidI;
+    if (templatePaid === 'paid') {
+        isPaid = true;
+        price = req.body.templatePriceI;
+    }
+    else {
+        isPaid = false;
+        price = 0;
+    }
 
-        //save Template
-        let isPaid;
-        let price;
-        var templatePaid = req.body.templatePaidI;
-        if (templatePaid === 'paid') {
-            isPaid = true;
-            price = req.body.templatePriceI;
+    var saveTemplate = new TemplateModel();
+    saveTemplate.TemplateName = req.body.templateNameI;
+    saveTemplate.TemplateThumb = 'x';
+    saveTemplate.TemplateDesc = req.body.templateDescI;
+    saveTemplate.TemplatePrice = price;
+    saveTemplate.TemplateFor=req.body.templateForI;
+    saveTemplate.isPaid = isPaid;
+    saveTemplate.save(function (err, result) {
+        if(!err){
+
+            var io = req.app.get('socketio');
+
+            //send notification to all users 
+            facades.saveNotif('userall','','RedirectToCv','notifNewTemplate',{templateName:result.TemplateName},true,io)
+
+            //trigger user 
+            var io=req.app.get('socketio');
+            io.emit('TEMPLATE_CREATED',{})
+
+            return res.redirect('/Cpanel/Templates/new')
         }
-        else {
-            isPaid = false;
-            price = 0;
+        else{
+            console.log(err)
         }
-    
-        var saveTemplate = new TemplateModel();
-        saveTemplate.TemplateName = req.body.templateNameI;
-        saveTemplate.TemplateThumb = x;
-        saveTemplate.TemplateDesc = req.body.templateDescI;
-        saveTemplate.TemplatePrice = price;
-        saveTemplate.TemplateFor=req.body.templateForI;
-        saveTemplate.isPaid = isPaid;
-        saveTemplate.save(function (err, result) {
-            if(!err){
-
-                var io = req.app.get('socketio');
-
-                //send notification to all users 
-                facades.saveNotif('userall','','RedirectToCv','notifNewTemplate',{templateName:result.TemplateName},true,io)
-
-                //trigger user 
-                var io=req.app.get('socketio');
-                io.emit('TEMPLATE_CREATED',{})
-
-                return res.redirect('/Cpanel/Templates/new')
-            }
-            else{
-                console.log(err)
-            }
-        })
     })
+    //upload Template Thumbnail
+    // facades.uploadFileTo(req.files.templateThumbI[0], 'template',null, function (x) {
+
+    // })
 }
 
 exports.Delete=function(req,res){

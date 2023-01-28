@@ -731,7 +731,7 @@ exports.Render = function (req, res) {
                         return res.json({
                             success: false,
                             payload: null,
-                            message:error
+                            message:error.stack
                         });
                     }
 
